@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import avatar from '../img/avatar.jpg';
+import avatar from '../img/avatar1.jpg';
 
 function Navigation() {
     return (
@@ -11,19 +11,19 @@ function Navigation() {
             </div>
             <ul className="nav-items">
                 <li className="nav-item">
-                    <NavLink to="/" activeclassname="active-class" exact="true">Home</NavLink>
+                    <NavLink to="/" activeclassname="active" exact="true">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/about" activeclassname="active-class" exact="true">About</NavLink>
+                    <NavLink to="/about" activeclassname="active" exact="true">About</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/resume" activeclassname="active-class" exact="true">Resume</NavLink>
+                    <NavLink to="/resume" activeclassname="active" exact="true">Resume</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/blogs" activeclassname="active-class" exact="true">Blogs</NavLink>
+                    <NavLink to="/blogs" activeclassname="active" exact="true">Blogs</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/contact" activeclassname="active-class" exact="true">Contact</NavLink>
+                    <NavLink to="/contact" activeclassname="active" exact="true">Contact</NavLink>
                 </li>
             </ul>
             <footer className="footer">
@@ -56,8 +56,8 @@ const NavigationStyled = styled.nav`
     .nav-items{
         width: 100%;
         text-align: center;
-        .active-class{
-            background-color: var(--primary-color-light);
+        .active{
+            background-color: #5face3;
             color: white;
         }
         li{
@@ -68,7 +68,7 @@ const NavigationStyled = styled.nav`
                 position: relative;
                 z-index: 10;
                 text-transform: uppercase;
-                transition: all .4s ease-in-out;
+                transition: all .5s ease-in-out;
                 font-weight: 600;
                 letter-spacing: 1px;
                 &:hover{
@@ -101,7 +101,7 @@ const NavigationStyled = styled.nav`
         width: 100%;
         p{
             padding: 1.3rem 0;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             display: block;
             text-align: center;
         }

@@ -21,6 +21,7 @@ const ProgressBarStyled = styled.div`
         align-items: center;
         p{
             padding-right: 1.1rem;
+            font-size: 1.3rem;
         }
         .progress{
             position: relative;

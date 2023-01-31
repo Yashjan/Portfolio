@@ -6,7 +6,8 @@ import SmallTitle from '../Components/SmallTitle';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import SchoolIcon from '@mui/icons-material/School';
 import ResumeItem from '../Components/ResumeItem';
-
+import work from '../data/work';
+import eductaion from '../data/education';
 function Resume() {
     const briefcase = <BusinessCenterIcon />
     const school = <SchoolIcon />
@@ -15,50 +16,38 @@ function Resume() {
             <Title title={'Resume'} span={'resume'} />
             <InnerLayout>
                 <div className="small-title">
-                    <SmallTitle icon={briefcase} title={'Working Experience'} />
+                    <SmallTitle icon={briefcase} title={'Project Experience'} />
                 </div>
                 <div className="resume-content">
-                    <ResumeItem 
-                        year={'2015 - 2020'} 
-                        title={'Computer Science Teacher'}
-                        subTitle={'Sussex University'}
-                        text={'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero. '} 
-                    />
-                    <ResumeItem 
-                        year={'2015 - Present'} 
-                        title={'Full Stack Developer'}
-                        subTitle={'Microsoft Studios'}
-                        text={'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero. '} 
-                    />
-                    <ResumeItem 
-                        year={'2010 - 2017'} 
-                        title={'User Interface Designer'}
-                        subTitle={'Google Inc'}
-                        text={'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero. '} 
-                    />
+                    {
+                        work.map((data)=>{
+                            return(
+                                <ResumeItem 
+                                year={data.year} 
+                                title={data.title}
+                                subTitle={data.subTitle}
+                                text={data.text} 
+                            />
+                            )
+                        })
+                    }
                 </div>
                 <div className="small-title u-small-title-margin">
                     <SmallTitle icon={school} title={'Educational Qualifications'} />
                 </div>
                 <div className="resume-content ">
-                    <ResumeItem 
-                        year={'201 - 2022'} 
-                        title={'Computer Science Degree'}
-                        subTitle={'Sussex University'}
-                        text={'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero. '} 
-                    />
-                    <ResumeItem 
-                        year={'2015 - 2017'} 
-                        title={'A - Levels'}
-                        subTitle={'Church Hill High'}
-                        text={'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero. '} 
-                    />
-                    <ResumeItem 
-                        year={'2015 - 2017'} 
-                        title={'High School Graduation'}
-                        subTitle={'ABC School'}
-                        text={'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero. '} 
-                    />
+                    {
+                        eductaion.map((data)=>{
+                            return(
+                                <ResumeItem 
+                                year={data.year} 
+                                title={data.title}
+                                subTitle={data.subTitle}
+                                text={data.text} 
+                            />
+                            )
+                        })
+                    }
                 </div>
             </InnerLayout>
         </ResumeStyled>    

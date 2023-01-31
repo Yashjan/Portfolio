@@ -1,55 +1,79 @@
 import React from 'react';
 import styled from 'styled-components';
-import {MainLayout, InnerLayout} from '../styles/Layouts';
+import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
-import PrimaryButton from '../Components/PrimaryButton';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ContactItem from '../Components/ContactItem';
-
+import SubButton from '../Components/SubButton';
+import { useForm, ValidationError } from '@formspree/react';
 function ContactPage() {
     const phone = <PhoneIcon />
     const email = <EmailIcon />
     const location = <LocationOnIcon />
+    const [state, handleSubmit] = useForm("xayzqpaz");
+    if (state.succeeded) {
+        return <p>Thanks for joining!</p>;
+    }
     return (
         <MainLayout>
             <Title title={'Contact'} span={'Contact'} />
             <ContactPageStyled >
-            <InnerLayout className={'contact-section'}>
-                <div className="left-content">
-                    <div className="contact-title">
-                        <h4>Get In Touch</h4>
+                <InnerLayout className={'contact-section'}>
+                    <div className="left-content">
+                        <div className="contact-title">
+                            <h4>Get In Touch</h4>
+                        </div>
+                        <form className="form" onSubmit={handleSubmit}>
+                            <div className="form-field">
+                                <label htmlFor="name"  >Enter your name*</label>
+                                <input type="text" id="name" />
+                                <ValidationError
+                                    prefix="Name"
+                                    field="name"
+                                    errors={state.errors}
+                                />
+                            </div>
+                            <div className="form-field">
+                                <label htmlFor="email"  >Enter your email*</label>
+                                <input type="email" id="email" />
+                                <ValidationError
+                                    prefix="Email"
+                                    field="email"
+                                    errors={state.errors}
+                                />
+                            </div>
+                            <div className="form-field">
+                                <label htmlFor="subject"  >Enter your subject</label>
+                                <input type="text" id="subject" />
+                                <ValidationError
+                                    prefix="Subject"
+                                    field="subject"
+                                    errors={state.errors}
+                                />
+                            </div>
+                            <div className="form-field">
+                                <label htmlFor="text-area">Enter your Message*</label>
+                                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                                <ValidationError
+                                    prefix="Textarea"
+                                    field="textarea"
+                                    errors={state.errors}
+                                />
+                            </div>
+                            <div className="form-field f-button">
+                                <SubButton />
+                            </div>
+                        </form>
                     </div>
-                    <form  className="form">
-                        <div className="form-field">
-                            <label htmlFor="name"  >Enter your name*</label>
-                            <input type="text" id="name" />
-                        </div>
-                        <div className="form-field">
-                            <label htmlFor="email"  >Enter your email*</label>
-                            <input type="email" id="email" />
-                        </div>
-                        <div className="form-field">
-                            <label htmlFor="subject"  >Enter your subject</label>
-                            <input type="text" id="subject" />
-                        </div>
-                        <div className="form-field">
-                            <label htmlFor="text-area">Enter your Message*</label>
-                            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-                        </div>
-                        <div className="form-field f-button">
-                            <PrimaryButton title={'Send Email'} />
-                        </div>
-                    </form>
-                </div>
-                <div className="right-content">
-                    <ContactItem title={'Phone'} icon={phone} cont1={'+66-789675637'} cont2={'07663520283'} />
-                    <ContactItem title={'Email'} icon={email} cont1={'loremipsum@gmail.com'} cont2={'info.lorem.ipsum@gmail.com'} />
-                    <ContactItem title={'Address'} icon={location} cont1={'27 Aldrich Road, London, England'} cont2={'United Kingdom'} />
-                    
-                </div>
-            </InnerLayout>
+                    <div className="right-content">
+                        <ContactItem title={'Phone'} icon={phone} cont1={'+91 7665009882'} cont2={'07565963829'} />
+                        <ContactItem title={'Email'} icon={email} cont1={'yashjangid2000@gmail.com'} cont2={'yashjangid2011.com'} />
+                        <ContactItem title={'Address'} icon={location} cont1={'27 Near new post office sambhar lake,Jaipur(Rajasthan),303604'} cont2={'India'} />
+
+                    </div>
+                </InnerLayout>
             </ContactPageStyled>
         </MainLayout>
     )

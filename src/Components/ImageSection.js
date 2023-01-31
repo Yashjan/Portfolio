@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import resume from '../img/resume.jpg';
+import resume from '../img/avatar2.jpg';
 import PrimaryButton from './PrimaryButton';
-
+import Pdf from '../data/Yashjangid.pdf'
 function ImageSection() {
     return (
         <ImageSectionStyled>
@@ -10,12 +10,9 @@ function ImageSection() {
                 <img src={resume} alt=""/>
             </div>
             <div className="right-content">
-                <h4>I am <span>Lorem Ipsum</span></h4>
+                <h4>I am <span>Yash Jangid</span></h4>
                 <p className="paragraph">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, natus quas vero enim 
-                    praesentium delectus est id fugiat ab libero adipisci recusandae at maxime veritatis! 
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, nesciunt.
-                    
+                    Hello friends myself Yash Jangid and I am from Jaipur(Rajasthan) and currently i am doing my B.Tech in Computer Science with Big-Data  specialization from UPES and I am Full Stack developer(MERN).        
                 </p>
                 <div className="about-info">
                     <div className="info-title">
@@ -27,15 +24,15 @@ function ImageSection() {
                         <p>Service</p>
                     </div>
                     <div className="info">
-                        <p>: Lorem Ipsum</p>
-                        <p>: 36</p>
-                        <p>: Spainsh </p>
-                        <p>: Spanish, French, English </p>
-                        <p>: London, United Kingdom</p>
+                        <p>: Yash Jangid</p>
+                        <p>: 22</p>
+                        <p>: Indian </p>
+                        <p>: Hindi, English </p>
+                        <p>: Jaipur, India</p>
                         <p>: Freelance</p>
                     </div>
                 </div>
-                <PrimaryButton title={'Download Cv'} />
+                <PrimaryButton title={'Download Cv'} href={Pdf} />
             </div>
         </ImageSectionStyled>
     )
@@ -43,7 +40,7 @@ function ImageSection() {
 
 
 const ImageSectionStyled = styled.div`
-    margin-top: 5rem;
+    margin-top: 3.6rem;
     display: flex;
     @media screen and (max-width:1000px){
         flex-direction: column;
@@ -56,23 +53,31 @@ const ImageSectionStyled = styled.div`
         img{
             width: 95%;
             object-fit: cover;
+            transition: all 0.4s ease-in-out;
+            &:hover{
+                transform: scale(1.05);
+                cursor: pointer;
+                border-radius: 2rem;
+            }
         }
     }
     .right-content{
         width: 100%;
         h4{
-            font-size: 2rem;
+            font-size: 3.8rem;
             color: var(--white-color);
             span{
-                font-size: 2rem;
+                font-size: 3.8rem;
             }
         }
         .paragraph{
-            padding: 1rem 0;
+            padding: 1.3rem 0;
+            font-size: 1.4rem;
         }
         .about-info{
             display: flex;
-            padding-bottom: 1.4rem;
+            padding-top: 1.08rem;
+            padding-bottom: 1.8rem;
             .info-title{
                 padding-right: 3rem;
                 p{
@@ -82,6 +87,7 @@ const ImageSectionStyled = styled.div`
             .info-title, .info{
                 p{
                     padding: .3rem 0;
+                    font-size: 1.21rem;
                 }
             }
         }

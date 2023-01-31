@@ -5,8 +5,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Particle from '../Components/Particle';
 import styled from 'styled-components';
 const HomePage = () => {
-  return (
-    <HomePageStyled>
+    return (
+        <HomePageStyled>
             <div className="particle-con">
                 <Particle />
             </div>
@@ -28,7 +28,7 @@ const HomePage = () => {
                 </div>
             </div>
         </HomePageStyled>
-  )
+    )
 }
 const HomePageStyled = styled.header`
     width: 100%;
@@ -48,6 +48,8 @@ const HomePageStyled = styled.header`
             justify-content: center;
             margin-top: 1rem;
             .icon{
+                width: 3.5rem;
+                height: 3rem;
                 border: 2px solid var(--border-color);
                 display: flex;
                 align-items: center;

@@ -93,8 +93,7 @@ textarea{
 a{
     font-family: inherit;
     color: inherit;
-    font-size: inherit;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 h1{
@@ -116,7 +115,7 @@ span{
 }
 h6{
     color: var(--white-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding-bottom: .6rem;
 }
 

@@ -17,7 +17,7 @@ function BlogsPage() {
                                     <img src={blog.image} alt=""/>
                                 </div>
                                 <div className="title">
-                                    <a href={blog.link}>
+                                    <a href={blog.link} rel="noreferrer" target="_blank">
                                         {blog.title}
                                     </a>
                                 </div>

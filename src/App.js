@@ -31,7 +31,7 @@ const App = () => {
 }
 const MainContentStyled = styled.main`
   position: relative;
-  margin-left: 20.3rem;
+  margin-left: 19.8rem;
   min-height: 100vh;
   @media screen and (max-width:1200px){
     margin-left: 0;

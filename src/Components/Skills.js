@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {InnerLayout} from '../styles/Layouts';
 import Title from '../Components/Title';
 import ProgressBar from './ProgressBar';
+import skill from '../data/skill';
 
 function Skills() {
     return (
@@ -11,41 +12,18 @@ function Skills() {
                 <Title title={'My Skills'} span={'my skills'} />
                 <InnerLayout>
                     <div className="skills">
-                        <ProgressBar 
-                            title={'HTML5'}
-                            width={'70%'}
-                            text={'70%'}
-                        />
-                        <ProgressBar 
-                            title={'CSS3'}
-                            width={'90%'}
-                            text={'90%'}
-                        />
-                        <ProgressBar 
-                            title={'JAVASCRIPT'}
-                            width={'85%'}
-                            text={'85%'}
-                        />
-                        <ProgressBar 
-                            title={'JAVA'}
-                            width={'60%'}
-                            text={'60%'}
-                        />
-                        <ProgressBar 
-                            title={'PYTHON'}
-                            width={'95%'}
-                            text={'95%'}
-                        />
-                        <ProgressBar 
-                            title={'React JS'}
-                            width={'75%'}
-                            text={'75%'}
-                        />
-                        <ProgressBar 
-                            title={'UNITY'}
-                            width={'75%'}
-                            text={'75%'}
-                        />
+                        {
+                            skill.map((data)=>{
+                                return(
+                                    <ProgressBar 
+                                    key={data.id}
+                                    title={data.title}
+                                    width={data.width}
+                                    text={data.text}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </InnerLayout>
         </SkillsStyled>

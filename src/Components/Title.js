@@ -11,18 +11,20 @@ function Title({title, span}) {
 
 const TitleStyled = styled.div`
     position: relative;
+    display: inline-block;
+    width: 25rem;
     h2{
         color: var(--white-color);
-        font-size: 3.1rem;
+        font-size: 3.8rem;
         font-weight: 600;
         text-transform: uppercase;
         position: relative;
         padding-bottom: .7rem;
         @media screen and (max-width: 496px){
-            font-size: 2.8rem;
+            font-size: 1.8rem;
         }
         @media screen and (max-width: 370px){
-            font-size: 2rem;
+            font-size: 1.4rem;
         }
         &::before{
             content: "";
@@ -41,13 +43,14 @@ const TitleStyled = styled.div`
             width: 3.5rem;
             height: .33rem;
             background-color: var(--primary-color);
+            transition: all 0.4s ease-in-out;
             border-radius: 15px;
             left: 0;
         }
         span{
             font-weight: 900;
             color: rgba(25,29,43,.44);
-            font-size: 5rem;
+            font-size: 4.5rem;
             position: absolute;
             left: 0;
             top: 30%;
@@ -60,6 +63,14 @@ const TitleStyled = styled.div`
             }
             @media screen and (max-width: 370px){
                 font-size: 2rem;
+            }
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        h2{
+            &::after{
+                width: 7.4rem;
             }
         }
     }

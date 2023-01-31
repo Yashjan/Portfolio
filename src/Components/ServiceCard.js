@@ -35,11 +35,15 @@ const ServiceCardStyled = styled.div`
                 content: "";
                 width: 4rem;
                 background-color: var(--border-color);
+                transition: all .4s ease-in-out;
                 height: 3px;
                 position: absolute;;
                 left: 0;
                 bottom: 0;
                 border-radius: 10px;
+            }
+            &:hover::after{
+                background-color: var(--primary-color);
             }
         }
 
